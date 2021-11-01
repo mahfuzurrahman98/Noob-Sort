@@ -59,6 +59,7 @@ void noobSort(int *a, int n) {
       b[f_id + 1] = a[i];
       mp[i] = 1;
     }
+    // copy the full array
     a[i] = b[i];
   }
 
