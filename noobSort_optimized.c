@@ -3,8 +3,8 @@
 
 void noobSort(int *a, int n) {
 
-  int *b = (int*)malloc(n * sizeof(int));
-  int *mp = (int*)malloc(n * sizeof(int));
+  int *b = (int *)malloc(n * sizeof(int));
+  int *mp = (int *)malloc(n * sizeof(int));
 
   int i, j = 0, f_id = -1, r_id = n;
   int cur_min, cur_max, min_loc, max_loc;
@@ -26,7 +26,7 @@ void noobSort(int *a, int n) {
     cur_min = g_max;
     cur_max = g_min;
 
-    // find min and max elements and their location
+    // find min and max elements with their location
     for (i = 0; i < n; i++) {
       // skip already marked indexes
       if (mp[i]) {
@@ -42,7 +42,7 @@ void noobSort(int *a, int n) {
       }
     }
 
-    // push those min and max elements on appropriate position
+    // insert those min and max elements on appropriate position
     // mark those indexes containing min and max elements
     b[++f_id] = cur_min;
     mp[min_loc] = 1;
@@ -54,6 +54,7 @@ void noobSort(int *a, int n) {
   }
 
   for (i = 0; i < n; i++) {
+    // in case, the array size is odd insert the unmarked position's element at one ahead of the front pointer
     if (mp[i] == 0) {
       b[f_id + 1] = a[i];
       mp[i] = 1;
