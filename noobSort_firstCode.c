@@ -1,3 +1,5 @@
+// this is the first implementation in late 2017
+
 #include <stdio.h>
 
 void noobSort(int[], int);
